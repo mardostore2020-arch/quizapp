@@ -1,0 +1,11 @@
+com\quiz\quizapp\controller\HomeController.class
+com\quiz\quizapp\controller\QuizController.class
+com\quiz\quizapp\model\Question.class
+com\quiz\quizapp\model\Result.class
+com\quiz\quizapp\repository\ResultRepository.class
+com\quiz\quizapp\controller\LeaderboardController.class
+com\quiz\quizapp\repository\CategoryRepository.class
+com\quiz\quizapp\QuizappApplication.class
+com\quiz\quizapp\service\QuizService.class
+com\quiz\quizapp\model\Category.class
+com\quiz\quizapp\repository\QuestionRepository.class

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Résultat</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d') no-repeat center/cover;
+            color: white;
+        }
+        .box {
+            margin-top: 15%;
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: gold;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h1>🎉 Résultat</h1>
+    <h2>Ton score : <span th:text="${score}"></span></h2>
+
+    <a href="/quiz">Rejouer</a>
+</div>
+
+</body>
+</html>
