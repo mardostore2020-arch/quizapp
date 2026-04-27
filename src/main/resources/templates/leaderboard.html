@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Leaderboard</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: url('https://images.unsplash.com/photo-1546519638-68e109498ffc') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+.table-box {
+    margin: 50px auto;
+    width: 60%;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+th {
+    background: gold;
+    color: black;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: gold;
+    color: black;
+    text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="table-box">
+    <h1>🏆 Classement des joueurs</h1>
+
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Score</th>
+        </tr>
+
+        <tr th:each="r, stat : ${results}">
+            <td th:text="${stat.index + 1}"></td>
+            <td th:text="${r.username}"></td>
+            <td th:text="${r.score} + '/' + ${r.total}"></td>
+        </tr>
+    </table>
+
+    <a href="/">Accueil</a>
+</div>
+
+</body>
+</html>

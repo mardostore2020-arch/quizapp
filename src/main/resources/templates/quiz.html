@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: url('https://images.unsplash.com/photo-1508780709619-79562169bc64') no-repeat center/cover;
+            color: white;
+        }
+        .quiz-box {
+            width: 60%;
+            margin: auto;
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: gold;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-box">
+    <h1>🧠 Quiz</h1>
+
+    <form action="/next" method="post">
+
+        <!-- Index caché -->
+        <input type="hidden" name="questionIndex" th:value="${questionIndex}">
+
+        <!-- Username -->
+        <input type="text" name="username" th:value="${username}" placeholder="Entre ton nom" required>
+
+        <!-- Question -->
+        <h2 th:text="${question.questionText}"></h2>
+
+        <!-- Réponses -->
+        <label>
+            <input type="radio" name="answer" value="A" required>
+            <span th:text="${question.optionA}"></span>
+        </label><br>
+
+        <label>
+            <input type="radio" name="answer" value="B">
+            <span th:text="${question.optionB}"></span>
+        </label><br>
+
+        <label>
+            <input type="radio" name="answer" value="C">
+            <span th:text="${question.optionC}"></span>
+        </label><br>
+
+        <label>
+            <input type="radio" name="answer" value="D">
+            <span th:text="${question.optionD}"></span>
+        </label><br><br>
+
+        <button type="submit">Suivant ➡️</button>
+
+    </form>
+</div>
+
+</body>
+</html>
